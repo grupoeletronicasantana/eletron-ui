@@ -5,7 +5,8 @@ const customTheme = create({
   base: "dark",
   brandTitle: "Eletron UI",
   brandUrl: "https://www.eletronicasantana.com.br",
-  brandImage: "/eletron-ui-column.svg",
+  brandImage:
+    "https://grupoeletronicasantana.github.io/eletron-ui/eletron-ui-column.svg",
   brandTarget: "_self",
 });
 
