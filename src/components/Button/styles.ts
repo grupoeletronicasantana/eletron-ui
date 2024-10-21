@@ -70,8 +70,8 @@ export const ButtonContainer = styled.button<{
 
           &:disabled {
             background-color: transparent;
-            color: #ccc;
-            border: 1px solid #ccc;
+            color: ${theme.colors.gray75};
+            border: 1px solid ${theme.colors.gray75};
           }
 
           &:focus {
@@ -88,8 +88,8 @@ export const ButtonContainer = styled.button<{
 
           &:disabled {
             background-color: transparent;
-            color: #ccc;
-            border: 1px solid #ccc;
+            color: ${theme.colors.gray75};
+            border: 1px solid ${theme.colors.gray75};
           }
 
           &:focus {
@@ -111,7 +111,7 @@ export const ButtonContainer = styled.button<{
   }}
 
   &:disabled {
-    background-color: #c9c9c9;
+    background-color: ${({ theme }) => theme.colors.gray75};
     cursor: not-allowed;
 
     &:hover {
