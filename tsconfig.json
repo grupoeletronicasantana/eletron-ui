@@ -11,7 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "./"
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"]
+    }
   },
   "include": [
     "src/stories/**/*.ts",
