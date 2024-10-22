@@ -4,7 +4,7 @@ import { create } from "@storybook/theming";
 const customTheme = create({
   base: "dark",
   brandTitle: "Eletron UI",
-  brandUrl: "https://www.eletronicasantana.com.br",
+  brandUrl: "https://grupoeletronicasantana.github.io/eletron-ui",
   brandImage:
     "https://grupoeletronicasantana.github.io/eletron-ui/eletron-ui-column.svg",
   brandTarget: "_self",

@@ -3,7 +3,7 @@ import { styled, css } from "styled-components";
 export const ButtonContainer = styled.button<{
   $size?: "sm" | "md" | "lg";
   $fullWidth?: boolean;
-  $variant?: "primary" | "secundary" | "outline" | "destroy";
+  $variant?: "primary" | "secondary" | "outline" | "destroy";
 }>`
   border-radius: 0.375rem;
   border: none;
@@ -15,6 +15,11 @@ export const ButtonContainer = styled.button<{
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  gap: 8px;
+
+  svg {
+    font-size: 20px;
+  }
 
   ${({ $fullWidth }) => {
     switch ($fullWidth) {
@@ -62,7 +67,7 @@ export const ButtonContainer = styled.button<{
           }
         `;
 
-      case "secundary":
+      case "secondary":
         return css`
           background-color: transparent;
           color: ${theme.colors.red_es};
@@ -127,17 +132,20 @@ export const ButtonIconContainer = styled.button`
   border-radius: 50%;
   background-color: transparent;
   border: none;
+
   width: fit-content;
   height: fit-content;
 
+  svg {
+    font-size: 24px;
+  }
+
   &:hover {
-    border-radius: 50%;
     outline: 4px solid rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
   }
 
   &:focus {
-    border-radius: 50%;
     outline: 4px solid rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
   }

@@ -1,5 +1,5 @@
-import React from "react";
 import type { Preview } from "@storybook/react";
+import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
 import { ThemeProvider } from "styled-components";
 import theme from "../src/styles/Theme";
@@ -15,12 +15,14 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Story />
-      </ThemeProvider>
-    ),
+    withThemeFromJSXProvider({
+      themes: {
+        default: theme,
+      },
+      defaultTheme: "default",
+      Provider: ThemeProvider,
+      GlobalStyles,
+    }),
   ],
 };
 
