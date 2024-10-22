@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import path from "path";
 
 const config: StorybookConfig = {
   stories: [
@@ -11,7 +12,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-themes"
+    "@storybook/addon-themes",
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -19,6 +20,19 @@ const config: StorybookConfig = {
   },
   core: {
     builder: "@storybook/builder-vite",
+  },
+  async viteFinal(config, { configType }) {
+    return {
+      ...config,
+      resolve: {
+        alias: [
+          {
+            find: "@components",
+            replacement: path.resolve(__dirname, "../src/components"),
+          },
+        ],
+      },
+    };
   },
 };
 export default config;
