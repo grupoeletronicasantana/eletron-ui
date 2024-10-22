@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { ButtonIcon } from "../../../components/Button";
+import { ButtonIcon } from "src/components/Button";
 
 import {
   FaAddressCard,

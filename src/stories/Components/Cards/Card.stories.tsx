@@ -2,12 +2,7 @@ import { Fragment } from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {
-  CardWrapper,
-  CardHeader,
-  Card,
-  CardFooter,
-} from "../../../components/Card";
+import { CardWrapper, CardHeader, Card, CardFooter } from "src/components/Card";
 
 const meta = {
   component: Fragment,
