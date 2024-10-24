@@ -1,18 +1,10 @@
-import { Fragment } from "react";
-
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { CardWrapper, CardHeader, Card, CardFooter } from "@components/Card";
 
 const meta = {
-  component: Fragment,
-  parameters: {
-    layout: "padded",
-  },
   tags: ["autodocs"],
-  argTypes: {},
-  args: {},
-} satisfies Meta<typeof Fragment>;
+} satisfies Meta;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -26,8 +18,8 @@ export const Full: Story = {
       },
     },
   },
-  args: {
-    children: (
+  render: ({}) => {
+    return (
       <CardWrapper>
         <CardHeader>Título do Card</CardHeader>
         <Card>
@@ -41,7 +33,7 @@ export const Full: Story = {
         </Card>
         <CardFooter>Rodapé do Card</CardFooter>
       </CardWrapper>
-    ),
+    );
   },
 };
 
@@ -53,8 +45,8 @@ export const WithoutFooter: Story = {
       },
     },
   },
-  args: {
-    children: (
+  render: ({}) => {
+    return (
       <CardWrapper>
         <CardHeader>Título do Card</CardHeader>
         <Card>
@@ -67,7 +59,7 @@ export const WithoutFooter: Story = {
           </p>
         </Card>
       </CardWrapper>
-    ),
+    );
   },
 };
 
@@ -79,8 +71,8 @@ export const WithoutHeader: Story = {
       },
     },
   },
-  args: {
-    children: (
+  render: ({}) => {
+    return (
       <CardWrapper>
         <Card>
           <h2>Conteúdo do Card</h2>
@@ -93,7 +85,7 @@ export const WithoutHeader: Story = {
         </Card>
         <CardFooter>Rodapé do Card</CardFooter>
       </CardWrapper>
-    ),
+    );
   },
 };
 
@@ -106,8 +98,8 @@ export const OnlyBody: Story = {
       },
     },
   },
-  args: {
-    children: (
+  render: ({}) => {
+    return (
       <Card>
         <h2>Conteúdo do Card</h2>
         <p>
@@ -117,6 +109,6 @@ export const OnlyBody: Story = {
           velit. Dolorum, rem aut?
         </p>
       </Card>
-    ),
+    );
   },
 };

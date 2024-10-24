@@ -26,9 +26,6 @@ const iconMap = {
 
 const meta = {
   component: Button,
-  parameters: {
-    layout: "padded",
-  },
   tags: ["autodocs"],
   argTypes: {
     icon: {
@@ -129,22 +126,26 @@ export const OnlyIcon: Story = {
   },
 };
 
-export const Sizes = () => {
-  const styles = { display: "flex", gap: "8px" };
-
-  return (
-    <div style={styles}>
-      <Button size="sm">Button</Button>
-      <Button size="md">Button</Button>
-      <Button size="lg">Button</Button>
-    </div>
-  );
-};
-
-Sizes.parameters = {
-  docs: {
-    description: {
-      story: "O botão suporta 3 tamanhos diferentes: 'sm', 'md' e 'lg'",
+export const Sizes: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "O botão suporta 3 tamanhos diferentes: 'sm', 'md' e 'lg'",
+      },
     },
+  },
+  args: {
+    children: "",
+  },
+  render: ({}) => {
+    const styles = { display: "flex", gap: "8px" };
+
+    return (
+      <div style={styles}>
+        <Button size="sm">Button</Button>
+        <Button size="md">Button</Button>
+        <Button size="lg">Button</Button>
+      </div>
+    );
   },
 };

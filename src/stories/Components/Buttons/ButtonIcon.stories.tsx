@@ -26,9 +26,6 @@ const iconMap = {
 
 const meta = {
   component: ButtonIcon,
-  parameters: {
-    layout: "padded",
-  },
   tags: ["autodocs"],
   argTypes: {
     icon: {
