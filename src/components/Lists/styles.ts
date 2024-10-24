@@ -4,11 +4,11 @@ export const ListContainer = styled.ul`
   list-style: none;
 
   li {
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 8px;
+    padding: 0 8px 8px 8px;
 
     &:not(:last-child) {
-      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     &:last-child {
@@ -46,6 +46,10 @@ export const ListItemIconContainer = styled.div`
   justify-content: center;
 
   margin-right: 1rem;
+
+  svg {
+    font-size: 20px;
+  }
 `;
 
 export const ListItemIconAvatarContainer = styled.div`
@@ -63,7 +67,12 @@ export const ListItemIconAvatarContainer = styled.div`
 
 export const ListItemActionContainer = styled.div`
   display: flex;
+  gap: 8px;
   align-items: center;
 
   margin-left: auto;
+
+  button svg {
+    font-size: 16px;
+  }
 `;

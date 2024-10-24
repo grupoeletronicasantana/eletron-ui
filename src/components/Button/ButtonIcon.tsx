@@ -1,9 +1,10 @@
 import { ButtonIconContainer } from "./styles";
-import { ReactElement } from "react";
+
+import { IconType } from "react-icons";
 
 interface ButtonIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: ReactElement;
+  icon: React.ReactElement<IconType>;
 }
 
 function ButtonIcon({ icon, ...props }: ButtonIconProps) {

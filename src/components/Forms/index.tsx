@@ -125,7 +125,7 @@ function Secret({ name, size = "md", withError, ...props }: InputProps) {
           {...register(name)}
         />
         <ButtonIcon
-          icon={isPasswordVisible ? IoEyeOff : IoEye}
+          icon={isPasswordVisible ? <IoEyeOff /> : <IoEye />}
           type="button"
           onClick={togglePasswordVisibility}
         />

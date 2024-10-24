@@ -4,6 +4,8 @@ export const TableWrapper = styled.div`
   width: 100%;
   overflow: auto;
   border-radius: 10px;
+
+  border: 1px solid ${({ theme }) => theme.colors.gray75};
 `;
 
 export const TableContainer = styled.table`
@@ -17,8 +19,8 @@ export const TableContainer = styled.table`
 `;
 
 export const TableHeaderContainer = styled.thead`
-  background-color: ${({ theme }) => theme.colors.TABLEHEADER};
-  color: ${({ theme }) => theme.colors.WHITE};
+  background-color: ${({ theme }) => theme.colors.gray75};
+  color: ${({ theme }) => theme.colors.white100};
 `;
 
 export const TableHeaderRowContainer = styled.tr`
@@ -34,10 +36,10 @@ export const TableBodyContainer = styled.tbody``;
 
 export const TableRowContainer = styled.tr`
   text-align: center;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.white100};
 
   &:nth-child(even) {
-    background-color: ${({ theme }) => theme.colors.TABLEBODYEVEN};
+    background-color: ${({ theme }) => theme.colors.gray90};
   }
 `;
 

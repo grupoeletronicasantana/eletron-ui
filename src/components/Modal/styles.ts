@@ -18,14 +18,14 @@ export const ModalContainer = styled.div`
   position: fixed;
   min-width: auto;
   max-width: 80vw;
-  background-color: ${({ theme }) => theme.colors.WHITE};
+  background-color: ${({ theme }) => theme.colors.white100};
   border-radius: 16px;
   padding: 2rem 3rem;
 
   > button {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0.75rem;
+    right: 0.75rem;
   }
 `;
 
@@ -51,7 +51,6 @@ export const ModalBodyContainer = styled.div<{
   $align?: "left" | "center" | "justify" | "right";
 }>`
   text-align: ${({ $align }) => ($align ? $align : "left")};
-  margin-bottom: 2em;
 `;
 
 export const ModalFooterContainer = styled.div`
@@ -60,6 +59,7 @@ export const ModalFooterContainer = styled.div`
   justify-content: flex-end;
   gap: 16px;
 
+  margin-top: 2em;
   margin-left: auto;
 
   button {

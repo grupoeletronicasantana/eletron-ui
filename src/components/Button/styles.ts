@@ -135,6 +135,7 @@ export const ButtonIconContainer = styled.button`
 
   width: fit-content;
   height: fit-content;
+  padding: 2px;
 
   svg {
     font-size: 24px;

@@ -1,9 +1,9 @@
 import { ButtonContainer } from "./styles";
-import { LoadSpin } from "../Loading";
-import { ReactElement } from "react";
+
+import { Spinner } from "@components/Spinner";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: ReactElement;
+  icon?: React.ReactElement;
   iconPosition?: "left" | "right";
   variant?: "primary" | "secondary" | "outline" | "destroy";
   size?: "sm" | "md" | "lg";
@@ -31,9 +31,15 @@ function Button({
       disabled={disabled || loading}
       {...props}
     >
-      {icon && iconPosition === "left" && icon}
-      {loading ? <LoadSpin /> : children}
-      {icon && iconPosition === "right" && icon}
+      {loading ? (
+        <Spinner size={size === "lg" ? "md" : "sm"} />
+      ) : (
+        <>
+          {icon && iconPosition === "left" && icon}
+          {children}
+          {icon && iconPosition === "right" && icon}
+        </>
+      )}
     </ButtonContainer>
   );
 }
