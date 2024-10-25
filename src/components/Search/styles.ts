@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Input } from "../Forms";
+import { InputContainer } from "../Forms/styles";
 
 export const SearchContainer = styled.div`
   width: 500px;
@@ -14,4 +14,11 @@ export const SearchContainer = styled.div`
   }
 `;
 
-export const SearchInput = styled(Input)``;
+export const SearchInput = styled(InputContainer)`
+  &[type="search"]::-webkit-search-decoration,
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-results-button,
+  &[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+`;

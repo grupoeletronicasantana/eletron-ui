@@ -28,7 +28,14 @@ interface ModalHeaderProps {
 }
 
 interface ModalBodyProps {
-  align?: "left" | "center" | "justify" | "right";
+  align?:
+    | "start"
+    | "end"
+    | "left"
+    | "right"
+    | "center"
+    | "justify"
+    | "match-parent";
   children: React.ReactNode;
 }
 

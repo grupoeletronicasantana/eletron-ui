@@ -42,13 +42,19 @@ export const ModalHeaderContainer = styled.div`
   > span {
     line-height: 80%;
     font-size: 14px;
-    margin-bottom: 0.5rem;
     opacity: 0.8;
   }
 `;
 
 export const ModalBodyContainer = styled.div<{
-  $align?: "left" | "center" | "justify" | "right";
+  $align?:
+    | "start"
+    | "end"
+    | "left"
+    | "right"
+    | "center"
+    | "justify"
+    | "match-parent";
 }>`
   text-align: ${({ $align }) => ($align ? $align : "left")};
 `;

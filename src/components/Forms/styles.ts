@@ -5,33 +5,31 @@ export const FormsContainer = styled.form`
 `;
 
 export const Asterisk = styled.span`
-  color: red;
+  color: ${({ theme }) => theme.colors.red_es};
   &::before {
     content: "*";
   }
 `;
 
-export const InputLabelFieldContainer = styled.div`
+export const FieldContainer = styled.div`
+  display: grid;
+  gap: 0.375rem;
+  align-items: center;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 `;
 
 export const LabelContainer = styled.label`
-  color: ${({ theme }) => theme.colors.gray20};
   white-space: nowrap;
 `;
 
 export const LabelErrorWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 8px;
 `;
 
 export const ErrorAlertContainer = styled.p`
   font-size: 13px;
-  color: red;
+  color: ${({ theme }) => theme.colors.red_es};
   white-space: nowrap;
 
   &::before {
@@ -43,15 +41,10 @@ export const ErrorAlertContainer = styled.p`
 export const InputContainer = styled.input<{ $size?: "sm" | "md" }>`
   border-radius: 8px;
   border: none;
-  background-color: ${({ theme }) => theme.colors.INPUT};
+  background-color: ${({ theme }) => theme.colors.gray90};
 
   width: 100%;
   padding: 8px 16px;
-
-  &::placeholder {
-    font-size: 15px;
-    font-weight: 400;
-  }
 
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.blue_es};
@@ -88,6 +81,8 @@ export const SecretContainer = styled.div`
   }
 `;
 
+export const SecretInput = styled(InputContainer)``;
+
 export const InputErrorWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,7 +95,7 @@ export const TextareaContainer = styled.textarea<{
 }>`
   border-radius: 8px;
   border: none;
-  background-color: ${({ theme }) => theme.colors.INPUT};
+  background-color: ${({ theme }) => theme.colors.gray90};
 
   width: 100%;
   padding: 16px;
