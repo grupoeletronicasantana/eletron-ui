@@ -7,12 +7,13 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     children: {
-      description: "Aceita apenas TableBody como children",
+      description: "Aceita apenas o componente TableBody como children",
       control: false,
     },
   },
   args: {
     headers: ["Coluna 1", "Coluna 2", "Coluna 3", "Coluna 4", "Coluna 5"],
+    children: <></>,
   },
 } satisfies Meta<typeof Table>;
 
@@ -20,38 +21,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <TableBody>
-        <TableRow>
-          <TableData>Linha 1</TableData>
-          <TableData>Linha 1</TableData>
-          <TableData>Linha 1</TableData>
-          <TableData>Linha 1</TableData>
-          <TableData>Linha 1</TableData>
-        </TableRow>
-        <TableRow>
-          <TableData>Linha 2</TableData>
-          <TableData>Linha 2</TableData>
-          <TableData>Linha 2</TableData>
-          <TableData>Linha 2</TableData>
-          <TableData>Linha 2</TableData>
-        </TableRow>
-        <TableRow>
-          <TableData>Linha 3</TableData>
-          <TableData>Linha 3</TableData>
-          <TableData>Linha 3</TableData>
-          <TableData>Linha 3</TableData>
-          <TableData>Linha 3</TableData>
-        </TableRow>
-        <TableRow>
-          <TableData>Linha 4</TableData>
-          <TableData>Linha 4</TableData>
-          <TableData>Linha 4</TableData>
-          <TableData>Linha 4</TableData>
-          <TableData>Linha 4</TableData>
-        </TableRow>
-      </TableBody>
-    ),
+  render: ({ headers }) => {
+    const tableData = [
+      { id: "1", row: "1" },
+      { id: "1", row: "2" },
+      { id: "3", row: "3" },
+      { id: "4", row: "4" },
+      { id: "5", row: "5" },
+    ];
+    return (
+      <Table headers={headers}>
+        <TableBody>
+          {tableData.map((data) => (
+            <TableRow key={data.id}>
+              <TableData>Linha {data.row}</TableData>
+              <TableData>Linha {data.row}</TableData>
+              <TableData>Linha {data.row}</TableData>
+              <TableData>Linha {data.row}</TableData>
+              <TableData>Linha {data.row}</TableData>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
   },
 };
