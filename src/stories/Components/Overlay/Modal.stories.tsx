@@ -160,7 +160,7 @@ export const ModalWithoutFooter = () => {
   );
 };
 
-export const OnlyWithModalBody = () => {
+export const OnlyModalBody = () => {
   const [open, setOpen] = useState(false);
 
   function handleOpen() {
@@ -177,6 +177,35 @@ export const OnlyWithModalBody = () => {
 
       <Modal isOpen={open} onClose={handleClose}>
         <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+            iure rerum aliquam asperiores voluptatum sit quod, consectetur
+            facere molestiae, nam ullam labore itaque assumenda ipsa neque
+            cupiditate fugit at! Sed!
+          </p>
+        </ModalBody>
+      </Modal>
+    </>
+  );
+};
+
+export const ModalBodyCentered = () => {
+  const [open, setOpen] = useState(false);
+
+  function handleOpen() {
+    setOpen(true);
+  }
+
+  function handleClose() {
+    setOpen(false);
+  }
+
+  return (
+    <>
+      <Button onClick={handleOpen}>Abrir Modal</Button>
+
+      <Modal isOpen={open} onClose={handleClose}>
+        <ModalBody align="center">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
             iure rerum aliquam asperiores voluptatum sit quod, consectetur
