@@ -1,15 +1,18 @@
-import { InputContainer, InputErrorWrapper } from "./styles";
+import React from "react";
+import { InputContainer } from "./styles";
 
 interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   id: string;
-  name: string;
   size?: "sm" | "md";
 }
 
-function Input({ name, size = "md", type = "text", ...props }: InputProps) {
-  return <InputContainer $size={size} type={type} {...props} />;
-}
+const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(
+  { size = "md", type = "text", ...props },
+  ref
+) {
+  return <InputContainer ref={ref} $size={size} type={type} {...props} />;
+});
 
 export { Input };
 export type { InputProps };

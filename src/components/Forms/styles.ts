@@ -13,8 +13,8 @@ export const Asterisk = styled.span`
 
 export const FieldContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 0.375rem;
-  align-items: center;
   width: 100%;
 `;
 
