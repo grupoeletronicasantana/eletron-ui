@@ -12,7 +12,7 @@ export const Asterisk = styled.span`
 `;
 
 export const FieldContainer = styled.div`
-  display: grid;
+  display: flex;
   gap: 0.375rem;
   align-items: center;
   width: 100%;
@@ -27,7 +27,7 @@ export const LabelErrorWrapper = styled.div`
   gap: 8px;
 `;
 
-export const ErrorAlertContainer = styled.p`
+export const ErrorTextContainer = styled.p`
   font-size: 13px;
   color: ${({ theme }) => theme.colors.red_es};
   white-space: nowrap;
@@ -81,7 +81,7 @@ export const SecretContainer = styled.div`
   }
 `;
 
-export const SecretInput = styled(InputContainer)``;
+export const SecretInputContainer = styled(InputContainer)``;
 
 export const InputErrorWrapper = styled.div`
   display: flex;
@@ -133,4 +133,10 @@ export const TextareaContainer = styled.textarea<{
         `;
     }
   }}
+`;
+
+export const HelperTextContainer = styled.p`
+  font-size: 13px;
+  opacity: 0.7;
+  white-space: nowrap;
 `;

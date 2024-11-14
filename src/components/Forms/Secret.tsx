@@ -1,22 +1,13 @@
 import { useState } from "react";
 
-import {
-  ErrorAlertContainer,
-  InputErrorWrapper,
-  SecretContainer,
-  SecretInput,
-} from "./styles";
-
-import { useFormContext } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+import { SecretContainer, SecretInputContainer } from "./styles";
 
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { ButtonIcon } from "../Button";
 
-import { TextInputProps } from "./TextInput";
+import { InputProps } from "./Input";
 
-function Secret({ name, size = "md", withError, ...props }: TextInputProps) {
-  const { register } = useFormContext();
+function Secret({ name, size = "md", ...props }: InputProps) {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -24,22 +15,18 @@ function Secret({ name, size = "md", withError, ...props }: TextInputProps) {
   };
 
   return (
-    <InputErrorWrapper>
-      <SecretContainer>
-        <SecretInput
-          $size={size}
-          type={isPasswordVisible ? "text" : "password"}
-          {...props}
-          {...register(name)}
-        />
-        <ButtonIcon
-          icon={isPasswordVisible ? <IoEyeOff /> : <IoEye />}
-          type="button"
-          onClick={togglePasswordVisibility}
-        />
-      </SecretContainer>
-      {withError && <ErrorMessage name={name} as={ErrorAlertContainer} />}
-    </InputErrorWrapper>
+    <SecretContainer>
+      <SecretInputContainer
+        $size={size}
+        type={isPasswordVisible ? "text" : "password"}
+        {...props}
+      />
+      <ButtonIcon
+        icon={isPasswordVisible ? <IoEyeOff /> : <IoEye />}
+        type="button"
+        onClick={togglePasswordVisibility}
+      />
+    </SecretContainer>
   );
 }
 

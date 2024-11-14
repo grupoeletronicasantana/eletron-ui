@@ -1,30 +1,33 @@
 import {
   LabelContainer,
   LabelErrorWrapper,
-  ErrorAlertContainer,
+  ErrorTextContainer,
   Asterisk,
 } from "./styles";
 
-import { ErrorMessage } from "@hookform/error-message";
+import { ErrorTextProps } from "./ErrorText";
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   name?: string;
   required?: boolean;
-  withError?: boolean;
   children: string;
 }
 
-function Label({ name, required, withError, children, ...props }: LabelProps) {
+interface LabelErrorProps {
+  children: React.ReactElement<LabelProps & ErrorTextProps>;
+}
+
+function Label({ name, required, children, ...props }: LabelProps) {
   return (
-    <LabelErrorWrapper>
-      <LabelContainer {...props}>
-        {children} {required && <Asterisk />}
-      </LabelContainer>
-      {withError && name && (
-        <ErrorMessage name={name} as={ErrorAlertContainer} />
-      )}
-    </LabelErrorWrapper>
+    <LabelContainer {...props}>
+      {children} {required && <Asterisk />}
+    </LabelContainer>
   );
 }
 
-export { Label };
+function LabelError({ children }: LabelErrorProps) {
+  return <LabelErrorWrapper>{children}</LabelErrorWrapper>;
+}
+
+export { Label, LabelError };
+export type { LabelProps };
