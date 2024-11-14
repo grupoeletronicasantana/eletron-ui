@@ -17,9 +17,9 @@ interface ModalProps {
   onClose: () => void;
   children:
     | React.ReactElement<ModalBodyProps>
-    | Array<
-        React.ReactElement<ModalHeaderProps | ModalBodyProps | ModalFooterProps>
-      >;
+    | React.ReactElement<
+        ModalHeaderProps | ModalBodyProps | ModalFooterProps
+      >[];
 }
 
 interface ModalHeaderProps {
@@ -40,7 +40,7 @@ interface ModalBodyProps {
 }
 
 interface ModalFooterProps {
-  children: React.ReactElement | Array<React.ReactElement>;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 function Modal({ isOpen, onClose, children }: ModalProps) {

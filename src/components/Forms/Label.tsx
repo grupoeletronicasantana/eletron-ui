@@ -14,7 +14,10 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 interface LabelErrorProps {
-  children: React.ReactElement<LabelProps & ErrorTextProps>;
+  children: [
+    React.ReactElement<LabelProps>,
+    React.ReactElement<ErrorTextProps>
+  ];
 }
 
 function Label({ name, required, children, ...props }: LabelProps) {
@@ -30,4 +33,4 @@ function LabelError({ children }: LabelErrorProps) {
 }
 
 export { Label, LabelError };
-export type { LabelProps };
+export type { LabelProps, LabelErrorProps };

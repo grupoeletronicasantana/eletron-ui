@@ -19,11 +19,11 @@ interface TableHeaderProps {
 }
 
 interface TableBodyProps {
-  children: React.ReactElement | Array<React.ReactElement>;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 interface TableRowProps {
-  children: React.ReactElement | Array<React.ReactElement>;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 interface TableDataProps {

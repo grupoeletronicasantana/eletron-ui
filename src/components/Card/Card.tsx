@@ -8,9 +8,7 @@ import {
 interface CardWrapperProps {
   children:
     | React.ReactElement
-    | Array<
-        React.ReactElement<CardHeaderProps | CardBodyProps | CardFooterProps>
-      >;
+    | React.ReactElement<CardHeaderProps | CardBodyProps | CardFooterProps>[];
 }
 
 interface CardHeaderProps {

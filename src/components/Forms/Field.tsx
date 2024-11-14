@@ -1,11 +1,13 @@
 import { FieldContainer } from "./styles";
 
-import { LabelProps } from "./Label";
+import { LabelProps, LabelErrorProps } from "./Label";
 import { InputProps } from "./Input";
 import { TextareaProps } from "./Textarea";
 
 interface FieldProps {
-  children: React.ReactElement<LabelProps | InputProps | TextareaProps>;
+  children: React.ReactElement<
+    LabelProps | LabelErrorProps | InputProps | TextareaProps
+  >[];
 }
 
 function Field({ children }: FieldProps) {

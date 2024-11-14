@@ -13,17 +13,15 @@ import { IconType } from "react-icons";
 interface ListProps {
   children:
     | React.ReactElement<ListItemProps>
-    | Array<React.ReactElement<ListItemProps>>;
+    | React.ReactElement<ListItemProps>[];
 }
 
 interface ListItemProps {
   children:
     | React.ReactElement<ListItemTextProps>
-    | Array<
-        React.ReactElement<
-          ListItemIconProps | ListItemTextProps | ListItemActionsProps
-        >
-      >;
+    | React.ReactElement<
+        ListItemIconProps | ListItemTextProps | ListItemActionsProps
+      >[];
 }
 
 interface ListItemIconProps {
@@ -33,7 +31,7 @@ interface ListItemIconProps {
 }
 
 interface ListItemActionsProps {
-  children: React.ReactElement | Array<React.ReactElement>;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 function List({ children }: ListProps) {
