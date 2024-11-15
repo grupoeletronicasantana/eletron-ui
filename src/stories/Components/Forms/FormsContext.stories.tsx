@@ -14,7 +14,7 @@ const meta = {
     docs: {
       description: {
         story:
-          "Exemplo do componente Forms que é basicamente um container estilizado do FormProvider do React-Hook-Forms, por tanto, é necessário o uso do RHF para utilizar esse componente pois ele exige receber os componentes necessários para montar o FormProvider, assim como é necessário envolver todos inputs da Eletron UI com esse componente. O Zod para declaração de schema e validação do formulário é opcional, mas altamente recomendado",
+          "Exemplo do componente Forms que é basicamente um container estilizado do FormProvider do React-Hook-Forms e um forms normal recebendo parte das props, por tanto, é necessário o uso do RHF para utilizar esse componente pois ele exige receber os componentes necessários para montar o FormProvider. O Zod para declaração de schema e validação do formulário é opcional, mas altamente recomendado",
       },
     },
   },
