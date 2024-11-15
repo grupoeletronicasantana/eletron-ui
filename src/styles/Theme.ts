@@ -13,6 +13,10 @@ const theme = {
     blue_es: "#0057A8",
     orange_ds: "#F89D1B",
   },
+  components: {
+    HEADER_BACKGROUND: "#000000",
+    HEADER_TEXT_COLOR: "#FFFFFF",
+  },
 };
 
 export default theme;

@@ -18,6 +18,16 @@
     "type": "git",
     "url": "git+https://github.com/grupoeletronicasantana/eletron-ui.git"
   },
+  "exports": {
+    "./*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js"
+    },
+    "./styles/theme": {
+      "types": "./dist/styles/Theme.d.ts",
+      "import": "./dist/styles/Theme.js"
+    }
+  },
   "keywords": [
     "react",
     "components",
