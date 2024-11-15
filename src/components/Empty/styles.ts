@@ -13,4 +13,8 @@ export const EmptyContainer = styled.div`
   border-radius: 12px;
 
   text-align: center;
+
+  svg {
+    font-size: 48px;
+  }
 `;

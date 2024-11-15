@@ -1,16 +1,17 @@
 import { EmptyContainer } from "./styles";
 
+import { IconType } from "react-icons";
+
 interface EmptyProps {
+  icon: React.ReactElement<IconType>;
   title: string;
   description?: string;
 }
 
-import { ImFilesEmpty } from "react-icons/im";
-
-function Empty({ title, description }: EmptyProps) {
+function Empty({ icon, title, description }: EmptyProps) {
   return (
     <EmptyContainer>
-      <ImFilesEmpty size={64} />
+      {icon}
       <h2>{title}</h2>
       <p>{description}</p>
     </EmptyContainer>

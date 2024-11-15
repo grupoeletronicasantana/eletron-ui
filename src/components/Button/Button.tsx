@@ -1,9 +1,11 @@
 import { ButtonContainer } from "./styles";
 
+import { IconType } from "react-icons";
+
 import { Spinner } from "@components/Spinner";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<IconType>;
   iconPosition?: "left" | "right";
   variant?: "primary" | "secondary" | "outline" | "destroy";
   size?: "sm" | "md" | "lg";
