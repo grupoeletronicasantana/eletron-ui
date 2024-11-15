@@ -10,8 +10,8 @@ import { ImFilesEmpty } from "react-icons/im";
 function Empty({ title, description }: EmptyProps) {
   return (
     <EmptyContainer>
-      <ImFilesEmpty />
-      <h1>{title}</h1>
+      <ImFilesEmpty size={64} />
+      <h2>{title}</h2>
       <p>{description}</p>
     </EmptyContainer>
   );

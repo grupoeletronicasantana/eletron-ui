@@ -59,10 +59,6 @@ export const EmptyDataContainer = styled.td`
   height: 200px;
 
   text-align: center;
-
-  svg {
-    font-size: 64px;
-  }
 `;
 
 export const LoadingDataContainer = styled.td`
@@ -72,10 +68,4 @@ export const LoadingDataContainer = styled.td`
 
   width: 100%;
   height: 100px;
-
-  text-align: center;
-
-  svg {
-    font-size: 64px;
-  }
 `;

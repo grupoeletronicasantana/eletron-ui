@@ -81,7 +81,7 @@ function TableData({ children }: TableDataProps) {
 function EmptyData({ title, description }: EmptyDataProps) {
   return (
     <EmptyDataContainer colSpan={100}>
-      <BsTable />
+      <BsTable size={64} />
       <h2>{title}</h2>
       <p>{description}</p>
     </EmptyDataContainer>
