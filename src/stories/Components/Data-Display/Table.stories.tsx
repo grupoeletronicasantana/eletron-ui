@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Table, TableBody, TableData, TableRow } from "@components/Table";
+import {
+  Table,
+  TableBody,
+  TableData,
+  TableRow,
+  EmptyData,
+  LoadingData,
+} from "@components/Table";
 
 const meta = {
   component: Table,
@@ -41,6 +48,34 @@ export const Default: Story = {
               <TableData>Linha {data.row}</TableData>
             </TableRow>
           ))}
+        </TableBody>
+      </Table>
+    );
+  },
+};
+
+export const EmptyTable: Story = {
+  render: ({ headers }) => {
+    return (
+      <Table headers={headers}>
+        <TableBody>
+          <TableRow>
+            <EmptyData title="Tabela Vazia" description="Lorem ipsum dolor" />
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  },
+};
+
+export const LoadingTable: Story = {
+  render: ({ headers }) => {
+    return (
+      <Table headers={headers}>
+        <TableBody>
+          <TableRow>
+            <LoadingData />
+          </TableRow>
         </TableBody>
       </Table>
     );
