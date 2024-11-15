@@ -7,7 +7,13 @@ import {
   TableBodyContainer,
   TableDataContainer,
   TableHeaderContainer,
+  EmptyDataContainer,
+  LoadingDataContainer,
 } from "./styles";
+
+import { BsTable } from "react-icons/bs";
+
+import { Spinner } from "@components/Spinner";
 
 interface TableProps {
   headers: string[];
@@ -28,6 +34,11 @@ interface TableRowProps {
 
 interface TableDataProps {
   children: React.ReactNode;
+}
+
+interface EmptyDataProps {
+  title: string;
+  description?: string;
 }
 
 function Table({ headers, children }: TableProps) {
@@ -67,4 +78,30 @@ function TableData({ children }: TableDataProps) {
   return <TableDataContainer>{children}</TableDataContainer>;
 }
 
-export { Table, TableHeader, TableBody, TableRow, TableData };
+function EmptyData({ title, description }: EmptyDataProps) {
+  return (
+    <EmptyDataContainer colSpan={100}>
+      <BsTable />
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </EmptyDataContainer>
+  );
+}
+
+function LoadingData() {
+  return (
+    <LoadingDataContainer colSpan={100}>
+      <Spinner size="lg" />
+    </LoadingDataContainer>
+  );
+}
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableData,
+  EmptyData,
+  LoadingData,
+};
