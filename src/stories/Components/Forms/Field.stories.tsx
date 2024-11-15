@@ -1,9 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Forms, Field, TextInput, Textarea } from "@components/Forms";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import {
+  Forms,
+  Field,
+  Input,
+  Textarea,
+  Label,
+  LabelError,
+  HelperText,
+  ErrorText,
+} from "@components/Forms";
+
 import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 
 const meta = {
   tags: ["autodocs"],
@@ -11,7 +22,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: "Usado para adicionar labels aos campos do formulário",
+        component:
+          "Usado para adicionar acessórios aos campos do formulário como Labels, HelperText e Erros",
       },
     },
   },
@@ -20,49 +32,29 @@ const meta = {
       control: false,
     },
   },
-  decorators: [
-    (Story) => {
-      const CreateFormSchema = z.object({
-        field: z.string(),
-      });
-
-      type FormSchema = z.infer<typeof CreateFormSchema>;
-
-      const methods = useForm<FormSchema>({
-        resolver: zodResolver(CreateFormSchema),
-      });
-
-      const submitForms = (formsData: FormSchema) => console.log(formsData);
-
-      return (
-        <Forms id="exampleForms" methods={methods} onSubmit={submitForms}>
-          <Story />
-        </Forms>
-      );
-    },
-  ],
 } satisfies Meta<typeof Field>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const WithTextInput: Story = {
+export const WithInput = {
   parameters: {
     docs: {
       description: {
-        story: "Em conjunto com o TextInput",
+        story: "Em conjunto com o Input",
       },
     },
   },
-  args: {
-    id: "input",
-    name: "input",
-    labelText: "TextInput:",
-    children: <TextInput id="input" name="input" placeholder="Placeholder" />,
+  render: ({}) => {
+    return (
+      <Field>
+        <Label id="input">Label Input:</Label>
+        <Input id="input" placeholder="Placeholder" />
+      </Field>
+    );
   },
 };
 
-export const WithTextarea: Story = {
+export const WithTextarea = {
   parameters: {
     docs: {
       description: {
@@ -70,32 +62,242 @@ export const WithTextarea: Story = {
       },
     },
   },
-  args: {
-    id: "textarea",
-    name: "textarea",
-    labelText: "Textarea:",
-    children: (
-      <Textarea id="textarea" name="textarea" placeholder="Placeholder" />
-    ),
+  render: ({}) => {
+    return (
+      <Field>
+        <Label id="textarea">Label Input:</Label>
+        <Textarea id="textarea" placeholder="Placeholder" />
+      </Field>
+    );
   },
 };
 
-export const WithRequired: Story = {
+export const WithRequired = {
   parameters: {
     docs: {
       description: {
         story:
-          "Ao adicionar a prop 'required' o Field adicionar um asterisco no componente da Label",
+          "Ao adicionar a prop 'required' no Label ele adiciona um asterisco indicando que este campo é obrigatório",
       },
     },
   },
-  args: {
-    id: "required",
-    name: "required",
-    labelText: "Required:",
-    required: true,
-    children: (
-      <TextInput id="required" name="required" placeholder="Placeholder" />
-    ),
+  render: ({}) => {
+    return (
+      <Field>
+        <Label id="required" required>
+          Label Required:
+        </Label>
+        <Input id="required" placeholder="Placeholder" />
+      </Field>
+    );
   },
+};
+
+export const WithHelper = {
+  parameters: {
+    docs: {
+      description: {
+        story: "É possível também agregar o componente de HelperText ao Field",
+      },
+    },
+  },
+  render: ({}) => {
+    return (
+      <Field>
+        <Label id="required" required>
+          Label Required:
+        </Label>
+        <Input id="required" placeholder="Placeholder" />
+        <HelperText>Esse campo é obrigatório</HelperText>
+      </Field>
+    );
+  },
+};
+
+const WithLabelErrorHook = () => {
+  const CreateFormSchema = z.object({
+    field_label_error: z.string().min(1, "Campo obrigatório"),
+  });
+
+  type FormSchema = z.infer<typeof CreateFormSchema>;
+
+  const methods = useForm<FormSchema>({
+    resolver: zodResolver(CreateFormSchema),
+  });
+
+  const { register, trigger } = methods;
+
+  const submitForms = (formsData: FormSchema) => {
+    console.log(formsData);
+  };
+
+  useEffect(() => {
+    trigger("field_label_error");
+  });
+
+  return (
+    <Forms id="label_error" methods={methods} onSubmit={submitForms}>
+      <Field>
+        <LabelError>
+          <Label id="field_label_error" required>
+            Label Required:
+          </Label>
+          <ErrorText name="field_label_error" />
+        </LabelError>
+        <Input
+          id="field_label_error"
+          {...register("field_label_error")}
+          placeholder="Placeholder"
+        />
+        <HelperText>Esse campo é obrigatório</HelperText>
+      </Field>
+    </Forms>
+  );
+};
+
+export const WithLabelError = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "É possível também adicionar uma mensagem de erro ao Field, agregando o componente ErrorText na Label trocando Label por LabelError ou no final usando apenas o ErrorText. Mas independente da forma selecionada é necessário que esse forms esteja dentro do componente Forms que usa React Hook Forms para controlar o Formulário e Zod para realizar as validações.",
+      },
+      source: {
+        code: `
+        const CreateFormSchema = z.object({
+        field_label_error: z.string().min(1, "Campo obrigatório"),
+        });
+
+        type FormSchema = z.infer<typeof CreateFormSchema>;
+
+        const methods = useForm<FormSchema>({
+          resolver: zodResolver(CreateFormSchema),
+        });
+
+        const { register, trigger } = methods;
+
+        const submitForms = (formsData: FormSchema) => {
+          console.log(formsData);
+        };
+
+        useEffect(() => {
+        trigger("field_label_error");
+        }); // Apenas para acionar o erro do Forms
+
+        return (
+          <Forms id="label_error" methods={methods} onSubmit={submitForms}>
+            <Field>
+              <LabelError>
+                <Label id="field_label_error" required>
+                  Label Required:
+                </Label>
+                <ErrorText name="field_label_error" />
+              </LabelError>
+              <Input
+                id="field_label_error"
+                {...register("field_label_error")}
+                placeholder="Placeholder"
+              />
+              <HelperText>Esse campo é obrigatório</HelperText>
+            </Field>
+          </Forms>
+        );
+        `,
+        language: "tsx",
+        type: "auto",
+      },
+    },
+  },
+  render: () => <WithLabelErrorHook />,
+};
+
+const WithInputErrorHook = () => {
+  const CreateFormSchema = z.object({
+    field_input_error: z.string().min(1, "Campo obrigatório"),
+  });
+
+  type FormSchema = z.infer<typeof CreateFormSchema>;
+
+  const methods = useForm<FormSchema>({
+    resolver: zodResolver(CreateFormSchema),
+  });
+
+  const { register, trigger } = methods;
+
+  const submitForms = async (formsData: FormSchema) => {
+    console.log(formsData);
+  };
+
+  useEffect(() => {
+    trigger("field_input_error");
+  });
+
+  return (
+    <Forms id="input_error" methods={methods} onSubmit={submitForms}>
+      <Field>
+        <Label id="field_input_error" required>
+          Label Required:
+        </Label>
+        <Input
+          id="field_input_error"
+          {...register("field_input_error")}
+          placeholder="Placeholder"
+        />
+        <HelperText>Esse campo é obrigatório</HelperText>
+        <ErrorText name="field_input_error" />
+      </Field>
+    </Forms>
+  );
+}; //
+
+export const WithInputError = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Exemplo do uso de ErrorText no final do Field.",
+      },
+      source: {
+        code: `
+        const CreateFormSchema = z.object({
+        field_input_error: z.string().min(1, "Campo obrigatório"),
+        });
+
+        type FormSchema = z.infer<typeof CreateFormSchema>;
+
+        const methods = useForm<FormSchema>({
+          resolver: zodResolver(CreateFormSchema),
+        });
+
+        const { register, trigger } = methods;
+
+        const submitForms = async (formsData: FormSchema) => {
+          console.log(formsData);
+        };
+
+        useEffect(() => {
+          trigger("field_input_error");
+        }); // Apenas para acionar o erro do Forms
+
+        return (
+          <Forms id="input_error" methods={methods} onSubmit={submitForms}>
+            <Field>
+              <Label id="field_input_error" required>
+                Label Required:
+              </Label>
+              <Input
+                id="field_input_error"
+                {...register("field_input_error")}
+                placeholder="Placeholder"
+              />
+              <HelperText>Esse campo é obrigatório</HelperText>
+              <ErrorText name="field_input_error" />
+            </Field>
+          </Forms>
+        )`,
+        language: "tsx",
+        type: "auto",
+      },
+    },
+  },
+  render: () => <WithInputErrorHook />,
 };

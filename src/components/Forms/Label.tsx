@@ -8,7 +8,7 @@ import {
 import { ErrorTextProps } from "./ErrorText";
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
-  name?: string;
+  id: string;
   required?: boolean;
   children: string;
 }
@@ -20,7 +20,7 @@ interface LabelErrorProps {
   ];
 }
 
-function Label({ name, required, children, ...props }: LabelProps) {
+function Label({ required, children, ...props }: LabelProps) {
   return (
     <LabelContainer {...props}>
       {children} {required && <Asterisk />}

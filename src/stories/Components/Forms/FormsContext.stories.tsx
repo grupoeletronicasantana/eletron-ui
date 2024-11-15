@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
 
-import { Forms, TextInput } from "@components/Forms";
+import { Forms, Input } from "@components/Forms";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -34,7 +34,13 @@ export const Default = () => {
     resolver: zodResolver(CreateFormSchema),
   });
   //
-  const submitForms = (formsData: FormSchema) => console.log(formsData);
+  const { register } = methods;
+  //
+  const submitForms = (formsData: FormSchema) => {
+    console.log("Teste");
+
+    console.log(formsData);
+  };
   //
   return (
     <Forms id="exampleForms" methods={methods} onSubmit={submitForms}>
@@ -45,14 +51,15 @@ export const Default = () => {
           gap: "16px",
         }}
       >
-        <TextInput
+        <Input
           id="field_1"
-          name="field_1"
+          {...register("field_1")}
           placeholder="Campo field_1 para teste"
         />
-        <TextInput
+
+        <Input
           id="field_2"
-          name="field_2"
+          {...register("field_2")}
           placeholder="Campo field_2 para teste"
         />
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { SecretContainer, SecretInputContainer } from "./styles";
 
@@ -7,7 +7,10 @@ import { ButtonIcon } from "../Button";
 
 import { InputProps } from "./Input";
 
-function Secret({ name, size = "md", ...props }: InputProps) {
+const Secret = React.forwardRef<HTMLInputElement, InputProps>(function Secret(
+  { size = "md", ...props },
+  ref
+) {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -17,6 +20,7 @@ function Secret({ name, size = "md", ...props }: InputProps) {
   return (
     <SecretContainer>
       <SecretInputContainer
+        ref={ref}
         $size={size}
         type={isPasswordVisible ? "text" : "password"}
         {...props}
@@ -28,6 +32,6 @@ function Secret({ name, size = "md", ...props }: InputProps) {
       />
     </SecretContainer>
   );
-}
+});
 
 export { Secret };

@@ -1,43 +1,36 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Forms, Secret } from "@components/Forms";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { Field, Label, Secret } from "@components/Forms";
 
 const meta = {
   tags: ["autodocs"],
   component: Secret,
-  decorators: [
-    (Story) => {
-      const CreateFormSchema = z.object({
-        field: z.string(),
-      });
-
-      type FormSchema = z.infer<typeof CreateFormSchema>;
-
-      const methods = useForm<FormSchema>({
-        resolver: zodResolver(CreateFormSchema),
-      });
-
-      const submitForms = (formsData: FormSchema) => console.log(formsData);
-
-      return (
-        <Forms id="secretForms" methods={methods} onSubmit={submitForms}>
-          <Story />
-        </Forms>
-      );
+  argTypes: {
+    type: {
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "password" },
+      },
     },
-  ],
+  },
+  args: {
+    id: "secret",
+    placeholder: "Placeholder de exemplo",
+  },
 } satisfies Meta<typeof Secret>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    id: "secret",
-    name: "secret",
-    placeholder: "Placeholder de exemplo",
+export const Default: Story = {};
+
+export const WithLabel: Story = {
+  render: ({}) => {
+    return (
+      <Field>
+        <Label id="secret">Label:</Label>
+        <Secret id="secret" placeholder="Placeholder" />
+      </Field>
+    );
   },
 };

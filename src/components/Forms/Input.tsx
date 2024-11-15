@@ -3,7 +3,7 @@ import { InputContainer } from "./styles";
 
 interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  id: string;
+  id?: string;
   size?: "sm" | "md";
 }
 
