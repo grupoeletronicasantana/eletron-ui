@@ -20,10 +20,18 @@ function Forms<T extends FieldValues>({
   children,
   ...props
 }: FormProps<T>) {
+  function preventDefault(event: React.FormEvent) {
+    event.preventDefault();
+  }
+
   return (
     <FormProvider {...methods}>
       <FormsContainer
-        onSubmit={onSubmit ? methods.handleSubmit(onSubmit) : undefined}
+        onSubmit={
+          onSubmit
+            ? methods.handleSubmit(onSubmit)
+            : (e: React.FormEvent) => preventDefault(e)
+        }
         {...props}
       >
         {children}

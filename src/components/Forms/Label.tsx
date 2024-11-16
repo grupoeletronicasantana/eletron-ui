@@ -8,7 +8,7 @@ import {
 import { ErrorTextProps } from "./ErrorText";
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
-  id: string;
+  htmlFor: string;
   required?: boolean;
   children: string;
 }

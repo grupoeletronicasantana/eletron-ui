@@ -1,3 +1,4 @@
+import React from "react";
 import { SearchContainer, SearchInput } from "./styles";
 
 import { FaSearch } from "react-icons/fa";
@@ -7,13 +8,16 @@ interface SearchProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
 }
 
-function Search({ ...props }: SearchProps) {
+const Search = React.forwardRef<HTMLInputElement, SearchProps>(function Search(
+  { ...props },
+  ref
+) {
   return (
     <SearchContainer>
-      <SearchInput type="search" {...props} />
+      <SearchInput ref={ref} type="search" {...props} />
       <FaSearch />
     </SearchContainer>
   );
-}
+});
 
 export { Search };
