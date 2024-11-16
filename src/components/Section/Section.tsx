@@ -6,14 +6,21 @@ interface SectionProps {
   id: string;
   titleAlign?: "left" | "center" | "right";
   title: string;
+  variant?: "primary" | "secondary";
   children: React.ReactNode;
 }
 
-function Section({ id, titleAlign = "left", title, children }: SectionProps) {
+function Section({
+  id,
+  titleAlign = "left",
+  title,
+  variant = "primary",
+  children,
+}: SectionProps) {
   return (
-    <SectionContainer id={id}>
+    <SectionContainer id={id} $variant={variant}>
       <SectionHeader $titleAlign={titleAlign}>
-        <h2>{title}</h2>
+        {variant === "primary" ? <h2>{title}</h2> : <h4>{title}</h4>}
       </SectionHeader>
       <Separator marginBottom="1rem" />
       {children}

@@ -1,7 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const SectionContainer = styled.section`
+export const SectionContainer = styled.section<{
+  $variant?: "primary" | "secondary";
+}>`
   margin-bottom: 2rem;
+
+  ${({ $variant }) =>
+    $variant === "secondary" &&
+    css`
+      margin-top: 1rem;
+
+      & {
+        margin-bottom: 0;
+      }
+    `}
 `;
 
 export const SectionHeader = styled.div<{
@@ -17,6 +29,4 @@ export const CollapsibleHeader = styled.div`
   cursor: pointer;
 `;
 
-export const SectionContent = styled.div`
-  padding-top: 1rem;
-`;
+export const SectionContent = styled.div``;
