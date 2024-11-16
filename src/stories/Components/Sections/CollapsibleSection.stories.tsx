@@ -17,3 +17,66 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const ClosedByDefault: Story = {
+  args: {
+    defaultOpen: false,
+  },
+};
+
+export const Secondary: Story = {
+  render: ({}) => {
+    return (
+      <>
+        <CollapsibleSection id="primary_1" title="Primary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+          vero maxime, recusandae cupiditate, labore explicabo consectetur iusto
+          fugiat saepe ut a dolorem debitis incidunt nobis in necessitatibus!
+          Iste, est?
+          <CollapsibleSection
+            id="secondary_1"
+            title="Secondary First"
+            variant="secondary"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </CollapsibleSection>
+          <CollapsibleSection
+            id="secondary_2"
+            title="Secondary Second"
+            variant="secondary"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </CollapsibleSection>
+        </CollapsibleSection>
+        <CollapsibleSection id="primary_2" title="Primary">
+          <CollapsibleSection
+            id="secondary_3"
+            title="Secondary"
+            variant="secondary"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </CollapsibleSection>
+          <CollapsibleSection
+            id="secondary_4"
+            title="Secondary"
+            variant="secondary"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </CollapsibleSection>
+        </CollapsibleSection>
+      </>
+    );
+  },
+};

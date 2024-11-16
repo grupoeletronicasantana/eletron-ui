@@ -44,3 +44,48 @@ export const TitleAlign: Story = {
     );
   },
 };
+
+export const Secondary: Story = {
+  render: ({}) => {
+    return (
+      <>
+        <Section id="primary_1" title="Primary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+          vero maxime, recusandae cupiditate, labore explicabo consectetur iusto
+          fugiat saepe ut a dolorem debitis incidunt nobis in necessitatibus!
+          Iste, est?
+          <Section id="secondary_1" title="Secondary First" variant="secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </Section>
+          <Section
+            id="secondary_2"
+            title="Secondary Second"
+            variant="secondary"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </Section>
+        </Section>
+        <Section id="primary_2" title="Primary">
+          <Section id="secondary_3" title="Secondary" variant="secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </Section>
+          <Section id="secondary_4" title="Secondary" variant="secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at
+            vero maxime, recusandae cupiditate, labore explicabo consectetur
+            iusto fugiat saepe ut a dolorem debitis incidunt nobis in
+            necessitatibus! Iste, est?
+          </Section>
+        </Section>
+      </>
+    );
+  },
+};
