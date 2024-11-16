@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
 import {
   Forms,
@@ -47,7 +47,7 @@ export const WithInput = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="input">Label Input:</Label>
+        <Label htmlFor="input">Label Input:</Label>
         <Input id="input" placeholder="Placeholder" />
       </Field>
     );
@@ -65,7 +65,7 @@ export const WithTextarea = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="textarea">Label Input:</Label>
+        <Label htmlFor="textarea">Label Input:</Label>
         <Textarea id="textarea" placeholder="Placeholder" />
       </Field>
     );
@@ -84,7 +84,7 @@ export const WithRequired = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="required" required>
+        <Label htmlFor="required" required>
           Label Required:
         </Label>
         <Input id="required" placeholder="Placeholder" />
@@ -104,7 +104,7 @@ export const WithHelper = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="required" required>
+        <Label htmlFor="required" required>
           Label Required:
         </Label>
         <Input id="required" placeholder="Placeholder" />
@@ -139,7 +139,7 @@ const WithLabelErrorHook = () => {
     <Forms id="label_error" methods={methods} onSubmit={submitForms}>
       <Field>
         <LabelError>
-          <Label id="field_label_error" required>
+          <Label htmlFor="field_label_error" required>
             Label Required:
           </Label>
           <ErrorText name="field_label_error" />
@@ -188,7 +188,7 @@ export const WithLabelError = {
           <Forms id="label_error" methods={methods} onSubmit={submitForms}>
             <Field>
               <LabelError>
-                <Label id="field_label_error" required>
+                <Label htmlFor="field_label_error" required>
                   Label Required:
                 </Label>
                 <ErrorText name="field_label_error" />
@@ -235,7 +235,7 @@ const WithInputErrorHook = () => {
   return (
     <Forms id="input_error" methods={methods} onSubmit={submitForms}>
       <Field>
-        <Label id="field_input_error" required>
+        <Label htmlFor="field_input_error" required>
           Label Required:
         </Label>
         <Input
@@ -281,7 +281,7 @@ export const WithInputError = {
         return (
           <Forms id="input_error" methods={methods} onSubmit={submitForms}>
             <Field>
-              <Label id="field_input_error" required>
+              <Label htmlFor="field_input_error" required>
                 Label Required:
               </Label>
               <Input

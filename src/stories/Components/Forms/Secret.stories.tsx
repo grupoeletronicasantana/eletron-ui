@@ -28,7 +28,7 @@ export const WithLabel: Story = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="secret">Label:</Label>
+        <Label htmlFor="secret">Label:</Label>
         <Secret id="secret" placeholder="Placeholder" />
       </Field>
     );

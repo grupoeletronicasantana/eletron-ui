@@ -20,7 +20,7 @@ export const WithLabel: Story = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="textarea">Senha:</Label>
+        <Label htmlFor="textarea">Senha:</Label>
         <Textarea id="textarea" placeholder="Placeholder de exemplo." />
       </Field>
     );

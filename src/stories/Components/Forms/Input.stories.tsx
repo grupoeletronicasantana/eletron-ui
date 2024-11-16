@@ -25,7 +25,7 @@ export const WithLabel: Story = {
   render: ({}) => {
     return (
       <Field>
-        <Label id="input">Senha:</Label>
+        <Label htmlFor="input">Senha:</Label>
         <Input id="input" placeholder="Insira sua senha" />
       </Field>
     );
