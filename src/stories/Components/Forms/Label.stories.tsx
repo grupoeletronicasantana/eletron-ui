@@ -1,17 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useEffect } from "react";
 
-import {
-  Forms,
-  Label,
-  LabelError,
-  Field,
-  Input,
-  ErrorText,
-} from "@components/Forms";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { Label } from "@components/Forms";
 
 const meta = {
   tags: ["autodocs"],
@@ -22,7 +11,7 @@ const meta = {
     },
   },
   args: {
-    id: "label",
+    htmlFor: "label",
     children: "Label",
   },
 } satisfies Meta<typeof Label>;
