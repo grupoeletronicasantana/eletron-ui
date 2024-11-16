@@ -2,7 +2,7 @@ import { ButtonContainer } from "./styles";
 
 import { IconType } from "react-icons";
 
-import { Spinner } from "@components/Spinner";
+import { Spinner } from "../Spinner";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactElement<IconType>;

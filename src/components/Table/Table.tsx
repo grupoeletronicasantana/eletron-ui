@@ -13,7 +13,7 @@ import {
 
 import { BsTable } from "react-icons/bs";
 
-import { Spinner } from "@components/Spinner";
+import { Spinner } from "../Spinner";
 
 interface TableProps {
   headers: string[];
