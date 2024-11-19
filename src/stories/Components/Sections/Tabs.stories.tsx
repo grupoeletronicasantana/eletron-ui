@@ -45,12 +45,28 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const Enclosed: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "É possível mudar o visual da Tabs indicando que deseja usar a varaiante enclosed.",
+      },
+    },
+  },
   args: {
     variant: "enclosed",
   },
 };
 
 export const DefaultValue: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Caso existe a necessidade também é possível indicar qual Tab você deseja que fique aberta inicialmente, se não, por padrão ele vai sempre pegar a TabsContent.",
+      },
+    },
+  },
   args: {
     defaultValue: "tab2",
   },
