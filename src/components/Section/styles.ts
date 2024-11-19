@@ -10,6 +10,10 @@ export const SectionContainer = styled.section<{
     css`
       margin-top: 1rem;
 
+      h4 {
+        font-weight: 600;
+      }
+
       & {
         margin-bottom: 0;
       }
