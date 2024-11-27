@@ -12,6 +12,7 @@ export const ListContainer = styled.ul`
     }
 
     &:last-child {
+      margin-bottom: 0;
       border-bottom: 2px solid transparent;
     }
   }
