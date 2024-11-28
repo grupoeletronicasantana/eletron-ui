@@ -13,6 +13,7 @@ const meta = {
   component: AlertDialog,
   tags: ["autodocs"],
   parameters: {
+    layout: "fullscreen",
     docs: {
       description: {
         component:

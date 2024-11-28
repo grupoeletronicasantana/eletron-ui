@@ -14,6 +14,7 @@ const meta = {
   component: Dialog,
   tags: ["autodocs"],
   parameters: {
+    layout: "fullscreen",
     docs: {
       description: {
         component:

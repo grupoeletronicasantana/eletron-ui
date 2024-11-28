@@ -11,6 +11,12 @@ const meta = {
   component: Modal,
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        component:
+          "Os exemplos que usei para Modal aqui são bem simples, mas a ideia é que o Modal seja completamente modular, aqui só usei texto, mas ele pode conter dentro dele qualquer outro componente, particularmente acredito que ele combina bastante com Tabs, componentes de Data Display e de Forms.",
+      },
+    },
   },
   argTypes: {
     children: {
