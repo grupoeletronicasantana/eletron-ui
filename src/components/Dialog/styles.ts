@@ -1,13 +1,10 @@
 import { styled, css } from "styled-components";
 
-import { Modal, ModalHeader } from "../Modal";
 import {
   ModalHeaderContainer,
   ModalBodyContainer,
   ModalFooterContainer,
 } from "../Modal/styles";
-
-export const AlertDialogContainer = styled(Modal)``;
 
 export const AlertDialogBodyContainer = styled(ModalBodyContainer)<{
   $variant: "success" | "error" | "info" | "destroy";
@@ -58,9 +55,7 @@ export const AlertDialogActionsContainer = styled(ModalFooterContainer)`
   }
 `;
 
-export const DialogContainer = styled(Modal)``;
-
-export const DialogHeaderContainer = styled(ModalHeader)``;
+export const DialogHeaderContainer = styled(ModalHeaderContainer)``;
 
 export const DialogBodyContainer = styled(ModalBodyContainer)``;
 

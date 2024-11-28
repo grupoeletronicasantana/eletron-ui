@@ -1,8 +1,9 @@
 import {
-  AlertDialogContainer,
   AlertDialogBodyContainer,
   AlertDialogActionsContainer,
 } from "./styles";
+
+import { Modal } from "../Modal";
 
 import {
   CiCircleCheck,
@@ -32,9 +33,9 @@ interface AlertDialogActionsProps {
 
 function AlertDialog({ isOpen, onClose, children }: AlertDialogProps) {
   return (
-    <AlertDialogContainer isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       {children}
-    </AlertDialogContainer>
+    </Modal>
   );
 }
 

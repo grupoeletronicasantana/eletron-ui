@@ -1,9 +1,10 @@
 import {
-  DialogContainer,
   DialogHeaderContainer,
   DialogBodyContainer,
   DialogFooterContainer,
 } from "./styles";
+
+import { Modal } from "../Modal";
 
 interface DialogProps {
   isOpen: boolean;
@@ -36,14 +37,19 @@ interface DialogFooterProps {
 
 function Dialog({ isOpen, onClose, children }: DialogProps) {
   return (
-    <DialogContainer isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       {children}
-    </DialogContainer>
+    </Modal>
   );
 }
 
 function DialogHeader({ title, description }: DialogHeaderProps) {
-  return <DialogHeaderContainer title={title} description={description} />;
+  return (
+    <DialogHeaderContainer>
+      <h2>{title}</h2>
+      {description && <span>{description}</span>}
+    </DialogHeaderContainer>
+  );
 }
 
 function DialogBody({ children }: DialogBodyProps) {
