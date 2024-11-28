@@ -20,7 +20,7 @@ export const ModalContainer = styled.div`
   max-width: 80vw;
   background-color: ${({ theme }) => theme.colors.white100};
   border-radius: 16px;
-  padding: 2rem 3rem;
+  padding: 2rem;
 
   > button {
     position: absolute;
@@ -36,7 +36,7 @@ export const ModalHeaderContainer = styled.div`
   margin-bottom: 2rem;
 
   > h2 {
-    line-height: 80%;
+    line-height: 90%;
   }
 
   > span {
@@ -65,10 +65,6 @@ export const ModalFooterContainer = styled.div`
   justify-content: flex-end;
   gap: 16px;
 
-  margin-top: 2em;
+  margin-top: 1rem;
   margin-left: auto;
-
-  button {
-    width: fit-content;
-  }
 `;
