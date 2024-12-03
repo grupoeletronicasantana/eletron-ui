@@ -1,6 +1,6 @@
 {
   "name": "@grupoeletronicasantana/eletron-ui",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Biblioteca de componentes React estilizados com styled-components.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
