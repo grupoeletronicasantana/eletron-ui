@@ -5,7 +5,7 @@ export const FullScreenLoadingContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: ${({ theme }) => theme.colors.gray90};
+  background-color: ${({ theme }) => theme.colors.gray10};
   width: 100vw;
   height: 100vh;
   z-index: 9999999999;
