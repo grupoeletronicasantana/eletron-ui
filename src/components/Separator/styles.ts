@@ -4,7 +4,7 @@ export const SeparatorContainer = styled.hr<{
   $marginTop?: string;
   $marginBottom?: string;
 }>`
-  color: ${({ theme }) => theme.colors.gray90};
+  color: ${({ theme }) => theme.colors.gray20};
 
   ${({ $marginTop, $marginBottom }) => css`
     ${$marginTop &&

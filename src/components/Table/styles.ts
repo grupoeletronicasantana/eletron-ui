@@ -5,7 +5,7 @@ export const TableWrapper = styled.div`
   overflow: auto;
   border-radius: 10px;
 
-  border: 1px solid ${({ theme }) => theme.colors.gray75};
+  border: 1px solid ${({ theme }) => theme.colors.gray60};
 `;
 
 export const TableContainer = styled.table`
@@ -17,7 +17,7 @@ export const TableContainer = styled.table`
 `;
 
 export const TableHeaderContainer = styled.thead`
-  background-color: ${({ theme }) => theme.colors.gray75};
+  background-color: ${({ theme }) => theme.colors.gray60};
   color: ${({ theme }) => theme.colors.white100};
 `;
 
@@ -39,7 +39,7 @@ export const TableRowContainer = styled.tr`
   background-color: ${({ theme }) => theme.colors.white100};
 
   &:nth-child(even) {
-    background-color: ${({ theme }) => theme.colors.gray90};
+    background-color: ${({ theme }) => theme.colors.gray20};
   }
 `;
 

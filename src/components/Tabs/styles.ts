@@ -14,7 +14,7 @@ export const TabsListContainer = styled.div<{ $variant: "line" | "enclosed" }>`
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          border-bottom: 2px solid ${theme.colors.gray90};
+          border-bottom: 2px solid ${theme.colors.gray20};
         `;
       case "enclosed":
         return css`
@@ -22,7 +22,7 @@ export const TabsListContainer = styled.div<{ $variant: "line" | "enclosed" }>`
           align-items: center;
           justify-content: center;
           border-radius: 8px;
-          background-color: ${theme.colors.gray90};
+          background-color: ${theme.colors.gray20};
           gap: 4px;
           padding: 4px;
         `;
@@ -56,6 +56,7 @@ export const TabTrigger = styled.button<{
             border-bottom: 2px solid ${theme.colors.blue_es};
           `}
         `;
+
       case "enclosed":
         return css`
           padding: 8px 16px;
@@ -64,7 +65,7 @@ export const TabTrigger = styled.button<{
           border-radius: 4px;
           cursor: pointer;
           border: none;
-          background-color: ${theme.colors.gray90};
+          background-color: ${theme.colors.gray20};
           transition: background-color 0.2s, color 0.2s;
           width: 100%;
 
@@ -77,11 +78,6 @@ export const TabTrigger = styled.button<{
             background-color: ${theme.colors.blue_es};
             color: ${theme.colors.white100};
           `}
-        `;
-      default:
-        return css`
-          padding: 8px 16px;
-          cursor: pointer;
         `;
     }
   }}

@@ -8,7 +8,7 @@ export const ListContainer = styled.ul`
     padding: 0 8px 8px 8px;
 
     &:not(:last-child) {
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid ${({ theme }) => theme.colors.gray30};
     }
 
     &:last-child {
@@ -38,7 +38,7 @@ export const ListItemTextTitle = styled.p`
 `;
 
 export const ListItemTextSubtitle = styled.p`
-  opacity: 0.7;
+  color: ${({ theme }) => theme.colors.gray60};
 `;
 
 export const ListItemIconContainer = styled.div`

@@ -40,14 +40,14 @@ export const ErrorTextContainer = styled.p`
 
 export const InputContainer = styled.input<{ $size?: "sm" | "md" }>`
   border-radius: 8px;
-  border: none;
-  background-color: ${({ theme }) => theme.colors.gray90};
+  border: 2px solid ${({ theme }) => theme.colors.gray50};
+  background-color: ${({ theme }) => theme.colors.gray20};
 
   width: 100%;
   padding: 8px 16px;
 
   &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.blue_es};
+    border-color: ${({ theme }) => theme.colors.blue_es};
   }
 
   &:read-only {
@@ -94,8 +94,8 @@ export const TextareaContainer = styled.textarea<{
   $size?: "sm" | "md" | "lg";
 }>`
   border-radius: 8px;
-  border: none;
-  background-color: ${({ theme }) => theme.colors.gray90};
+  border: 2px solid ${({ theme }) => theme.colors.gray50};
+  background-color: ${({ theme }) => theme.colors.gray20};
 
   width: 100%;
   padding: 16px;
@@ -108,7 +108,7 @@ export const TextareaContainer = styled.textarea<{
   }
 
   &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.blue_es};
+    border-color: ${({ theme }) => theme.colors.blue_es};
   }
 
   &:read-only {
@@ -137,6 +137,6 @@ export const TextareaContainer = styled.textarea<{
 
 export const HelperTextContainer = styled.p`
   font-size: 13px;
-  opacity: 0.7;
+  color: ${({ theme }) => theme.colors.gray60};
   white-space: nowrap;
 `;

@@ -36,13 +36,12 @@ export const ModalHeaderContainer = styled.div`
   margin-bottom: 2rem;
 
   > h2 {
-    line-height: 90%;
+    line-height: 1rem;
   }
 
   > span {
-    line-height: 80%;
     font-size: 14px;
-    opacity: 0.8;
+    color: ${({ theme }) => theme.colors.gray60};
   }
 `;
 

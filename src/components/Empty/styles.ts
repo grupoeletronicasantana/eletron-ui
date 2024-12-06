@@ -9,7 +9,7 @@ export const EmptyContainer = styled.div`
   width: 100%;
   height: 200px;
 
-  border: 2px dashed ${({ theme }) => theme.colors.gray75};
+  border: 2px dashed ${({ theme }) => theme.colors.gray40};
   border-radius: 12px;
 
   text-align: center;
